@@ -15,7 +15,7 @@ import java.util.Random;
 public class MyService extends Service {
     private static String TAG = "MyService";
     private boolean flag = true;
-    Random random = new Random();
+     Random random = new Random();
 
     //启动服务都会回调
     @Override
