@@ -22,4 +22,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="停止服务" />
+
+    <Button
+        android:id="@+id/btnStartBind"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="绑定Bind服务" />
+
+    <Button
+        android:id="@+id/btnStopBind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="解绑Bind服务" />
+
+
 </LinearLayout>

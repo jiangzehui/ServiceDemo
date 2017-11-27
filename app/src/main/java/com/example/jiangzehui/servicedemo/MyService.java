@@ -2,8 +2,11 @@ package com.example.jiangzehui.servicedemo;
 
 import android.app.Service;
 import android.content.Intent;
+import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
+
+import java.util.Random;
 
 /**
  * Created by jiangzehui on 17/11/25.
@@ -12,6 +15,7 @@ import android.util.Log;
 public class MyService extends Service {
     private static String TAG = "MyService";
     private boolean flag = true;
+    Random random = new Random();
 
     //启动服务都会回调
     @Override
@@ -47,10 +51,22 @@ public class MyService extends Service {
     }
 
     //BindService方式启动回调此方法
+    MyBindr myBindr = new MyBindr();
+    class MyBindr extends Binder {
+        public MyService getService() {
+            return MyService.this;
+        }
+    }
+
+    public int getRandomNum() {
+        return random.nextInt(100);
+    }
+
+
     @Override
     public IBinder onBind(Intent intent) {
         Log.d(TAG, "onBind");
-        return null;
+        return myBindr;
     }
 
     @Override
